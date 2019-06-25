@@ -1,5 +1,8 @@
 # SqlNinjaSyncAG
 
+# http://www.concatskills.com/2019/06/12/groupe-de-disponibilite-synchronisation-replicas-secondaires-jobs-logins-etc/
+# Webcast : https://www.youtube.com/watch?v=pEYHOXxJuBs
+
 Clear-Host
 
 # Step 01 - Install 3 component from Microsoft SQL Server 2016 feature Pack
@@ -42,3 +45,15 @@ Export-SqlNinjaEncryptedPwd -Username admsync -Password '!{JC26Mcp)WG=$:'
 
 # Step 09 - Copy template file for configuration to C:\SyncAG
 Copy-Item "C:\Program Files\WindowsPowerShell\Modules\SqlNinjaSyncAG\1.0.1\MyConf.json" -Destination C:\SyncAG 
+
+### Generate T-SQL scripts synchronisation ###
+
+Import-Module -Name SqlNinjaSyncAG -Force
+Set-Location C:\SyncAG
+Start-SqlNinjaSyncAG -InputFile MyConf.json -Execute $False
+
+### Execute synchronisation ###
+
+Import-Module -Name SqlNinjaSyncAG -Force
+Set-Location C:\SyncAG
+Start-SqlNinjaSyncAG -InputFile MyConf.json -Execute $True
