@@ -1,0 +1,96 @@
+{
+"AvaibilityGroup":
+	{ 
+			"Name": "MYAG",
+			"Listener": "MYLST",
+			"Login": "",
+			"Password": ""
+	},
+"Replicas": 
+	{
+			"Exclusions" : []
+	},
+"FixOwner": true,
+"Jobs": {
+	"FirstStepNameCheck": "AG Check Primary",
+	"ExcludeIfNoCheck": false
+	},
+"Objects":
+	[
+        {
+			"Type": "Logins",
+			"ToSync": true,
+			"Exclusions" : ["MYDOMAIN\\DBA"]
+        },
+        {
+			"Type": "Roles",
+			"ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "LinkedServers",
+            "ToSync": false,
+			"Exclusions" : []
+        },
+        {
+			"Type": "BackupDevices",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "MemberRoles",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "Permissions",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+		{
+			"Type": "Credentials",
+            "ToSync": false,
+			"Exclusions" : []
+        },
+		{
+			"Type": "OperatorCategories",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "AlertCategories",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+		{
+			"Type": "JobCategories",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+		{
+			"Type": "ProxyAccounts",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "Operators",
+            "ToSync": true,
+			"Exclusions" : []
+        },		
+        {
+			"Type": "Alerts",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "SharedSchedules",
+            "ToSync": true,
+			"Exclusions" : []
+        },
+        {
+			"Type": "Jobs",
+            "ToSync": true,
+			"Exclusions" : []
+        }
+	]
+}
